@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/fondoApp"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="24dp">
+
+    <TextView
+        android:id="@+id/restaurante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nombre_res"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/texto"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    2 ASIENTOS-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/dosAsientos"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/fondoElem"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toStartOf="@id/cuatroAsientos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/restaurante">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/ic_table" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dos_asientos"
+                android:textStyle="bold"
+                android:textColor="@color/fondoApp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--    4 ASIENTOS-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cuatroAsientos"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/fondoElem"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toStartOf="@id/ochoAsientos"
+        app:layout_constraintStart_toEndOf="@id/dosAsientos"
+        app:layout_constraintTop_toBottomOf="@id/restaurante">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/ic_table" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cuatro_asientos"
+                android:textColor="@color/fondoApp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--    8 ASIENTOS-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ochoAsientos"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/fondoElem"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cuatroAsientos"
+        app:layout_constraintTop_toBottomOf="@id/restaurante">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/ic_table" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ocho_asientos"
+                android:textColor="@color/fondoApp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/introduce_nombre"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/introduce_nombre"
+        android:textAllCaps="true"
+        android:textColor="@color/texto"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cuatroAsientos" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/name"
+        android:layout_marginTop="10dp"
+        android:hint="@string/name"
+        android:maxLines="1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/introduce_nombre"
+        android:textColor="@color/black"
+        android:textColorHint="#707070"
+        android:background="@color/fondoElem"/>
+
+    <androidx.cardview.widget.CardView
+
+        android:id="@+id/peso"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/fondoElem"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <!--                BOTON IZQUIERDA-->
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnIzq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_left"
+                    app:tint="@color/white"
+                    app:maxImageSize="60dp"
+                    android:layout_marginLeft="-70dp"
+                    android:layout_marginRight="35dp"
+                    />
+
+                <TextView
+                    android:id="@+id/hora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:00"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="38sp"
+                    android:textStyle="bold" />
+
+                <!--                BOTON DERECHA-->
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnDere"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_right"
+                    app:tint="@color/white"
+                    app:maxImageSize="60dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="-70dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+
+        android:id="@+id/btnNext"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/ic_check"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="55dp"
+        app:tint="@color/black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
