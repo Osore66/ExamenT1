@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@color/fondoApp"
     android:paddingHorizontal="16dp"
-    android:paddingVertical="24dp">
+    android:paddingVertical="24dp"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/restaurante"
@@ -23,13 +23,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    2 ASIENTOS-->
+    <!--    2 ASIENTOS-->
     <androidx.cardview.widget.CardView
         android:id="@+id/dosAsientos"
         android:layout_width="0dp"
         android:layout_height="120dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
         app:cardBackgroundColor="@color/fondoElem"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toStartOf="@id/cuatroAsientos"
@@ -52,8 +52,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/dos_asientos"
-                android:textStyle="bold"
-                android:textColor="@color/fondoApp" />
+                android:textColor="@color/fondoApp"
+                android:textStyle="bold" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -62,13 +62,12 @@
         android:id="@+id/cuatroAsientos"
         android:layout_width="0dp"
         android:layout_height="120dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         app:cardBackgroundColor="@color/fondoElem"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toStartOf="@id/ochoAsientos"
         app:layout_constraintStart_toEndOf="@id/dosAsientos"
-        app:layout_constraintTop_toBottomOf="@id/restaurante">
+        app:layout_constraintTop_toTopOf="@+id/dosAsientos">
 
         <LinearLayout
 
@@ -96,12 +95,11 @@
         android:id="@+id/ochoAsientos"
         android:layout_width="0dp"
         android:layout_height="120dp"
-        android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/fondoElem"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cuatroAsientos"
-        app:layout_constraintTop_toBottomOf="@id/restaurante">
+        app:layout_constraintTop_toTopOf="@+id/cuatroAsientos">
 
         <LinearLayout
 
@@ -126,9 +124,9 @@
 
     <TextView
         android:id="@+id/introduce_nombre"
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/introduce_nombre"
         android:textAllCaps="true"
         android:textColor="@color/texto"
@@ -142,16 +140,16 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/name"
         android:layout_marginTop="10dp"
+        android:background="@color/fondoElem"
+        android:contentDescription="@string/name"
         android:hint="@string/name"
         android:maxLines="1"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/introduce_nombre"
         android:textColor="@color/black"
         android:textColorHint="#707070"
-        android:background="@color/fondoElem"/>
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/introduce_nombre" />
 
     <androidx.cardview.widget.CardView
 
@@ -162,72 +160,66 @@
         android:layout_marginEnd="16dp"
         app:cardBackgroundColor="@color/fondoElem"
         app:cardCornerRadius="100dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="horizontal"
-                >
+            <!--                BOTON IZQUIERDA-->
 
-                <!--                BOTON IZQUIERDA-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnIzq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-70dp"
+                android:layout_marginRight="35dp"
+                android:src="@drawable/ic_left"
+                app:maxImageSize="60dp"
+                app:tint="@color/white" />
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/btnIzq"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_left"
-                    app:tint="@color/white"
-                    app:maxImageSize="60dp"
-                    android:layout_marginLeft="-70dp"
-                    android:layout_marginRight="35dp"
-                    />
+            <TextView
+                android:id="@+id/hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20:00"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="38sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/hora"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20:00"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="38sp"
-                    android:textStyle="bold" />
+            <!--                BOTON DERECHA-->
 
-                <!--                BOTON DERECHA-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnDere"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="-70dp"
+                android:src="@drawable/ic_right"
+                app:maxImageSize="60dp"
+                app:tint="@color/white" />
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/btnDere"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_right"
-                    app:tint="@color/white"
-                    app:maxImageSize="60dp"
-                    android:layout_marginLeft="35dp"
-                    android:layout_marginRight="-70dp"/>
-
-            </LinearLayout>
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
         android:id="@+id/btnNext"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/ic_check"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:maxImageSize="55dp"
+        app:maxImageSize="60dp"
         app:tint="@color/black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

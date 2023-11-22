@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun initComponents(){
+    private fun initComponents() {
         name = findViewById(R.id.name)
         btnNext = findViewById(R.id.btnNext)
         hora = findViewById(R.id.hora)
